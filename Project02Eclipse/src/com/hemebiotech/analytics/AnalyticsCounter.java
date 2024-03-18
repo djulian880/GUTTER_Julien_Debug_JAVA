@@ -41,7 +41,7 @@ public class AnalyticsCounter {
 		
 		
 		System.out.println("Résultat final:"); 
-		FileWriter writer = new FileWriter ("/Users/juliengutter/result.out");
+		FileWriter writer = new FileWriter ("/Users/juliengutter/Documents/result.out");
 		 
 		for(Map.Entry m:map.entrySet()){    
 			System.out.println(m.getKey()+" :"+m.getValue());    
