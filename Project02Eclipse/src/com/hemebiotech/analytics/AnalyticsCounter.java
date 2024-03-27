@@ -6,14 +6,15 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class AnalyticsCounter {
-
 	ISymptomReader reader;
 	ISymptomWriter writer;
 	
 	public static void main(String args[]) throws Exception {
+		System.out.println("Démarrage");
 		AnalyticsCounter comptage=new AnalyticsCounter(new ReadSymptomDataFromFile("/Users/juliengutter/git/GUTTER_Julien_Debug_JAVA/Project02Eclipse/symptoms.txt"),
 				new SymptomWriterDataToFile("/Users/juliengutter/Documents/result.out"));
 		comptage.writeSymptoms(comptage.sortSymptoms(comptage.countSymptoms(comptage.getSymptoms())));
+		System.out.println("Fin");
 	}
 	
 	
@@ -33,13 +34,13 @@ public class AnalyticsCounter {
 					int j;
 					j=map.get(symptome);
 					j++;
-					map.replace(symptome, j);
-								
+					map.replace(symptome, j);					
 				}
 				else {
 					map.put(symptome, 1);
 				}
 		}  
+		System.out.println("Nombre d'éléments dans la liste: "+map.size());
 		return map;
 	}
 	
