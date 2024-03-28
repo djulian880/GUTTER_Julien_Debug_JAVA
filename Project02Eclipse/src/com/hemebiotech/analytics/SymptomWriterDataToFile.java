@@ -4,17 +4,27 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Simple brute force implementation
+ *
+ */
 public class SymptomWriterDataToFile implements ISymptomWriter {
 	private String filepath;
 	
 	/**
 	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it, one per line
+	 * @param filepath a full or partial path to the file where symptoms with counts will be written
 	 */
 	public SymptomWriterDataToFile (String filepath) {
 		this.filepath = filepath;
 	}
 	
+	/**
+	 * Writes to file the list of symptoms with counts
+	 * File is overwritten
+	 * 
+	 * @param symptoms symptoms  Map with lists of symptoms and counts
+	 */
 	@Override
 	public void writeSymptoms(Map<String, Integer> symptoms) {
 		FileWriter writer;
@@ -25,7 +35,6 @@ public class SymptomWriterDataToFile implements ISymptomWriter {
 			} 
 			writer.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
